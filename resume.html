@@ -1,40 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VEDSMRITI Portfolio</title>
+  <title>Resume - VEDSMRITI Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-  
-<body>
   <!-- Navigation -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="index.html">Personal Portfolio</a>
-       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <span class="hamburger"></span>
-    </button>
-      <ul id="nav-menu" class="nav-menu">
+   <header>
+    <nav class="navbar">
+      <div class="logo">My Portfolio</div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="project.html">Projects</a></li>
-        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="resume.html">Resume</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-<!-- Script to highlight active nav link -->
-<script>
-  const currentPage = window.location.pathname.split("/").pop(); 
-  const navLinks = document.querySelectorAll(".nav-menu a");
 
-  navLinks.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    }
-  });
-</script>
+  <!-- Script to highlight active nav link -->
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 
   <!-- Page Content -->
   <section id="resume" class="section">
@@ -42,25 +39,29 @@
       <h2>Resume</h2>
       <p>You can download my resume here:</p>
       <a href="resume.pdf" class="btn primary" download>
-       <i class="fas fa-download"></i> Download Resume (pdf)</a>
+        <i class="fas fa-download"></i> Download Resume (PDF)
+      </a>
     </div>
   </section>
-  <br>
-  <br><br>
-  <footer class="site-footer">
-    <p>© All rights reserved.</p>
-  </footer>
-   
- <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
 
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navMenu.classList.toggle('open'); // match your CSS
-  });
-</script>
-<script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© VEDSMRITI | All rights reserved.</p>
+  </footer>
+
+  <!-- Navigation Toggle Script -->
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('open'); // match your CSS
+    });
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

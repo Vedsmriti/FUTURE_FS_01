@@ -1,3 +1,4 @@
+🧱 contact.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +11,21 @@
 <body>
   <!-- Header -->
   <header>
-  
     <nav class="navbar">
       <div class="logo">My Portfolio</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="project.html">Projects</a></li>
         <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">contact</a></li>
-       <li><a href="https://linkedin.com">LinkedIn</a></li>
-     </ul>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        
+      </ul>
     </nav>
   </header>
 
   <!-- Contact Section -->
   <section id="contact" class="contact animate">
-   <h2>Contact Me</h2>
+    <h2>Contact Me</h2>
     <p>If you'd like to collaborate or just say hello, feel free to reach out!</p>
 
     <div class="contact-wrapper">
@@ -41,65 +41,44 @@
         <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
 
         <button type="submit" class="btn primary">Send Message</button>
-    
 
-      <!-- Contact Icons -->
-   
-       <div class="contact-icons animate">
-        <a href="mailto:vedsmriti@gmail.com" class="icon-block" target="_blank">
-          <img src="email.png" alt="Email Logo">
-          <p>Email</p>
-        </a>
-        <a href="https://github.com/Sulfath786" class="icon-block" target="_blank">
-          <img src="github.png" alt="GitHub Logo">
-          <p>GitHub</p>
-        </a>
-        <a href="https://www.linkedin.com/in/sulfath-p-c-835056376" class="icon-block" target="_blank">
-          <img src="linkedin.png" alt="LinkedIn Logo">
-          <p>LinkedIn</p>
-        </a>
-      </div>
+        <!-- Contact Icons -->
+        <div class="contact-icons animate">
+          <a href="mailto:nairvedsmriti@gmail.com" class="icon-block" target="_blank">
+            <img src="email.png" alt="Email Logo">
+            <p>Email</p>
+          </a>
+          <a href="https://github.com/Vedsmriti" class="icon-block" target="_blank">
+            <img src="github.png" alt="GitHub Logo">
+            <p>GitHub</p>
+          </a>
+          <a href="https://www.linkedin.com/in/vedsmriti-nair-215257287" class="icon-block" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn Logo">
+            <p>LinkedIn</p>
+          </a>
+        </div>
+      </form>
     </div>
   </section>
-</form>
 
   <!-- Footer -->
   <footer>
     <p>© VEDSMRITI | Profile | Contact | Connect</p>
   </footer>
-<script>
-// ===== Navigation Toggle (for mobile) =====
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-links');
 
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-  });
-}
-
-// ===== Contact Form Feedback =====
-const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navMenu.classList.toggle('open'); // match your CSS
-  });
-  </script>
-  <!-- Success message script -->
+  <!-- Scripts -->
   <script>
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
 
-    form.addEventListener("submit", function(e) {
-     status.textContent = "Thanks! Your message has been sent.";
-      status.classList.add("active");
-      setTimeout(() => status.classList.remove("active"), 4000); // hide after 4s
-    });
-</script>
-
-
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
+
